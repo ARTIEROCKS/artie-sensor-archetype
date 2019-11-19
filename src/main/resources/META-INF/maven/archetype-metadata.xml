@@ -12,14 +12,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
-        <include>**/*.xml</include>
         <include>**/*.properties</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" packaged="true" encoding="UTF-8">
-      <directory>src/test/java</directory>
-      <includes>
-        <include>**/*.java</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
@@ -40,7 +33,6 @@
         <include>mvnw.cmd</include>
         <include>.gitignore</include>
         <include>mvnw</include>
-        <include>.travis.yml</include>
       </includes>
     </fileSet>
   </fileSets>

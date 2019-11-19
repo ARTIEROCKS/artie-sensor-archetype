@@ -1,4 +1,4 @@
-package artie.sensor.screenwebcam.enums;
+package ${package}.enums;
 
 public enum ConfigurationEnum {
 	SENSOR_ACTIVE

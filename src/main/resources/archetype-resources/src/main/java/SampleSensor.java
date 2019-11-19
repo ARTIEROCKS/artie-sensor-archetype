@@ -1,4 +1,4 @@
-package artie.sensor.screenwebcam;
+package ${package};
 
 import java.util.List;
 
@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import ${package}.enums.ConfigurationEnum;
+import ${package}.services.SampleService;
 import artie.sensor.common.dto.SensorObject;
 import artie.sensor.common.services.ArtieClientSensorImpl;
-import artie.sensor.screenwebcam.enums.ConfigurationEnum;
-import artie.sensor.screenwebcam.services.ScreenService;
 
 @Service
-public class ScreenWebcamSensor extends ArtieClientSensorImpl{
+public class SampleSensor extends ArtieClientSensorImpl{
 
 	//Configuration
 	@Value("${artie.sensor.sample.active}")
@@ -50,8 +50,8 @@ public class ScreenWebcamSensor extends ArtieClientSensorImpl{
 		
 		//If the screen capture is enabled
 		if(Boolean.parseBoolean(this.configuration.get(ConfigurationEnum.SENSOR_ACTIVE.toString()))){
-			this.screenService.start();
-			this.screenServiceIsActive = true;
+			this.sampleService.start();
+			this.sampleServiceIsActive = true;
 		}
 	}
 
@@ -59,7 +59,7 @@ public class ScreenWebcamSensor extends ArtieClientSensorImpl{
 	public void stop() {
 		//If the screen capture is active
 		if(this.sampleServiceIsActive){
-			this.screenService.stop();
+			this.sampleService.stop();
 		}
 	}
 	

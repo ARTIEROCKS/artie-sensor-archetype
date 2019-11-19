@@ -23,16 +23,21 @@
 	
 	<repositories>
 		<repository>
+      		<id>artie-snapshots</id>
+      		<name>ARTIE repository</name>
+      		<url>http://nexus.ai-mind.com:8081/nexus/content/repositories/snapshots</url>
+    	</repository>
+    	<repository>
+      		<id>artie-releases</id>
+      		<name>ARTIE repository</name>
+      		<url>http://nexus.ai-mind.com:8081/nexus/content/repositories/releases</url>
+    	</repository>
+		<repository>
           <id>central</id>
           <url>https://repo1.maven.org/maven2</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
-    	<repository>
-      		<id>github</id>
-      		<name>ARTIEROCKS Github repository</name>
-      		<url>https://maven.pkg.github.com/ARTIEROCKS</url>
-    	</repository>
   	</repositories>
 
 	<dependencies>
