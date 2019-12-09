@@ -1,24 +1,48 @@
 package ${package}.services;
+package ${package}.services;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
+import artie.sensor.common.dto.SensorObject;
+import artie.sensor.common.services.ArtieClientSensorImpl;
+
 
 @Service
-public class SampleService {
-	
+public class SampleService extends ArtieClientSensorImpl {
 	
 	/**
-	 * Function to start the sensor
+	 * About the sensor information
 	 */
-	public void start(){
+	private void sensorInformation(){
+		this.name = "Sample Sensor";
+		this.version = "0.0.1";
+		this.author = "Luis-Eduardo Imbernón";
+	}
+	
+	@PostConstruct
+	public void init(){
+		this.sensorInformation();
+	}
+	
+	/**
+	 * Getting the sensor data from the listeners
+	 * @return
+	 */
+	public List<SensorObject> getSensorData(){
+		return this.getSensorData();
+	}
+	
+	@Override
+	public void start() {
 		//Do something
 	}
 	
-
-	/**
-	 * Function to stop the sensor
-	 */
-	public void stop(){
+	@Override
+	public void stop() {
 		//Do something
 	}
 }
