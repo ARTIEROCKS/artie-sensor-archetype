@@ -45,9 +45,15 @@ public class SampleController implements ArtieClientSensor {
 		return this.sampleService.getConfiguration();
 	}
 	
-	@PostMapping(path = "/artie/sensor/${artifactId}/configuration", consumes = "application/json")
-	public void setConfiguration(@RequestBody Map<String, String> configuration){
+	@PostMapping(path = "/artie/sensor/screen/configuration")
+	@ResponseBody
+	public void setConfiguration(@RequestBody String configuration){
 		this.sampleService.setConfiguration(configuration);
+	}
+	
+	@Override
+	public void setConfiguration(Map<String, String> configuration) {
+		this.sampleService.setConfiguration(configuration);	
 	}
 
 	@GetMapping("/artie/sensor/${artifactId}/start")
@@ -66,6 +72,12 @@ public class SampleController implements ArtieClientSensor {
 	@ResponseBody
 	public List<SensorObject> getSensorData(){
 		return this.sampleService.getSensorData();
+	}
+	
+	@GetMapping("/artie/sensor/screen/sendSensorData")
+	@ResponseBody
+	public void sendSensorData() {
+		this.sampleService.sendSensorData();		
 	}
 	
 }
