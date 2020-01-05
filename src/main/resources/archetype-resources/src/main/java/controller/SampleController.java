@@ -39,6 +39,12 @@ public class SampleController implements ArtieClientSensor {
 		return this.sampleService.getAuthor();
 	}
 	
+	@GetMapping("/artie/sensor/${artifactId}/isAlive")
+	@ResponseBody
+	public boolean getIsAlive() {
+		return this.sampleService.getIsAlive();
+	}
+	
 	@GetMapping("/artie/sensor/${artifactId}/getConfiguration")
 	@ResponseBody
 	public Map<String, String> getConfiguration(){

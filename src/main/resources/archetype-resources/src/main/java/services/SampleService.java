@@ -36,6 +36,7 @@ public class SampleService extends ArtieClientSensorImpl {
 	@PostConstruct
 	public void init(){
 		this.sensorInformation();
+		this.isAlive = true;
 	}
 	
 	/**
